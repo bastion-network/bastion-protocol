@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASTION // The Sovereign Fortress of Human Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #06080d;
+            --card-bg: #0c1017;
+            --border: #1a2233;
+            --border-hover: #00f0ff;
+            --primary: #00f0ff;
+            --accent: #ff0055;
+            --success: #00ff88;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-github {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-github:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 50px 0;
+            text-align: center;
+        }
+
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--primary), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: var(--muted);
+            max-width: 720px;
+            margin: 0 auto 36px auto;
+        }
+
+        .quote-banner {
+            background: rgba(255, 0, 85, 0.05);
+            border: 1px solid rgba(255, 0, 85, 0.2);
+            border-radius: 12px;
+            padding: 18px 24px;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            font-style: italic;
+            color: #fca5a5;
+            font-size: 15px;
+        }
+
+        /* 3-Click Protection Wizard */
+        .wizard-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .wizard-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .wizard-title h2 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .wizard-title p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .platform-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background: #080b12;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            border-color: var(--primary);
+            color: #fff;
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .input-field {
+            width: 100%;
+            background: #05070a;
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            outline: none;
+            transition: border 0.2s ease;
+        }
+
+        .input-field:focus {
+            border-color: var(--primary);
+        }
+
+        .btn-activate {
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary), #00b4d8);
+            border: none;
+            color: #04060a;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: transform 0.1s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-activate:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Result Output */
+        .result-box {
+            display: none;
+            margin-top: 30px;
+            background: #040508;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .result-header h4 {
+            color: var(--success);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        pre {
+            background: #090d14;
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 8px;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin-bottom: 16px;
+        }
+
+        .copy-btn {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Stats & Referendum */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .stat-card h3 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .stat-num {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .vote-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .vote-btn {
+            background: #080b12;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .vote-btn:hover {
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .platform-tabs { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">BASTION <span>//</span> PROTOCOL</div>
+            <div class="nav-links">
+                <a href="https://github.com/bastion-protocol/bastion-core" class="btn-github">★ View Open Source GitHub</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="badge-live">
+                <div class="badge-dot"></div>
+                DEFENSE GRID ACTIVE • $BASTION
+            </div>
+            <h1>Stop AI Bots From Stealing Your Work.<br><span>Get Paid What You're Owed.</span></h1>
+            <p>Trillion-dollar AI companies scrape your videos, blogs, and code for free. Bastion poisons unauthorized scrapers with adversarial noise until Big Tech pays creators their fair share.</p>
+            
+            <div class="quote-banner">
+                "We cannot turn back the clock on the years they stole from you in the dark. But from the day you step behind our wall, not a single thought, video, or line of code leaves your hands without bringing you its true financial worth."
+            </div>
+        </section>
+
+        <!-- 3-CLICK WIZARD -->
+        <div class="wizard-card">
+            <div class="wizard-title">
+                <h2>60-Second Protection Generator</h2>
+                <p>Select your platform, enter your link, and generate your instant shield.</p>
+            </div>
+
+            <div class="platform-tabs">
+                <button class="tab-btn active" onclick="selectTab('youtube')">🎥 YouTube & Podcasts</button>
+                <button class="tab-btn" onclick="selectTab('website')">🌐 Websites & Blogs</button>
+                <button class="tab-btn" onclick="selectTab('github')">💻 GitHub / Developers</button>
+            </div>
+
+            <!-- YouTube Tab Form -->
+            <div id="form-youtube">
+                <div class="input-group">
+                    <label>Your YouTube Channel Name or Handle:</label>
+                    <input type="text" id="yt-input" class="input-field" placeholder="@MyTechChannel or YouTube URL">
+                </div>
+                <button class="btn-activate" onclick="generateShield('youtube')">⚡ ACTIVATE YOUTUBE SHIELD</button>
+            </div>
+
+            <!-- Website Tab Form -->
+            <div id="form-website" style="display: none;">
+                <div class="input-group">
+                    <label>Your Website Domain or Blog URL:</label>
+                    <input type="text" id="web-input" class="input-field" placeholder="example.com">
+                </div>
+                <button class="btn-activate" onclick="generateShield('website')">⚡ ACTIVATE WEBSITE SHIELD</button>
+            </div>
+
+            <!-- GitHub Tab Form -->
+            <div id="form-github" style="display: none;">
+                <div class="input-group">
+                    <label>Your GitHub Username or Repo Name:</label>
+                    <input type="text" id="gh-input" class="input-field" placeholder="username/my-project">
+                </div>
+                <button class="btn-activate" onclick="generateShield('github')">⚡ ACTIVATE CODE SHIELD</button>
+            </div>
+
+            <!-- Result Box -->
+            <div id="result-box" class="result-box">
+                <div class="result-header">
+                    <h4>✅ Shield Generated & Bound to Sovereign Trust</h4>
+                    <button class="copy-btn" onclick="copyShieldCode()">Copy Code</button>
+                </div>
+                <pre id="result-code"></pre>
+                <p id="result-instructions" style="font-size: 14px; color: var(--muted);"></p>
+                
+                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 13px; color: var(--success); font-family: 'JetBrains Mono', monospace;">● Estimated Annual Royalty Share: <b id="est-payout">$2,450.00 / yr</b></span>
+                    <span style="font-size: 12px; color: var(--muted);">Payouts via Stripe / USDC</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATS & DEMOCRATIC REFERENDUM -->
+        <div class="grid-2">
+            <div class="stat-card">
+                <h3>⚖️ The Democratic Data Tariff</h3>
+                <div class="stat-num">$1.0 BILLION</div>
+                <p style="color: var(--muted); font-size: 14px;">The current crowd-voted annual licensing fee for OpenAI and Google to access unpoisoned human knowledge.</p>
+                
+                <div class="vote-options">
+                    <button class="vote-btn" onclick="castVote('$500M')">Vote: $500 Million / yr <span>(22%)</span></button>
+                    <button class="vote-btn" onclick="castVote('$1.0B')" style="border-color: var(--primary);">Vote: $1.0 Billion / yr <span>(54% • LEADING)</span></button>
+                    <button class="vote-btn" onclick="castVote('$2.0B')">Vote: $2.0 Billion / yr <span>(24%)</span></button>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <h3>💰 The 70 / 30 Protocol Split</h3>
+                <div class="stat-num">70% TO CREATORS</div>
+                <p style="color: var(--muted); font-size: 14px;">Big Tech pays the tariff into the Trust. 70% is distributed to registered creators. 30% goes to Protocol Treasury.</p>
+                <div style="margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #a855f7;">
+                    <div>• Verified Humans Protected: 14,890+</div>
+                    <div style="margin-top: 6px;">• Unauthorized Scrapes Poisoned: 1.2M+</div>
+                    <div style="margin-top: 6px;">• Surplus $BASTION Burned: 450,000 Tokens</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>BASTION Sovereign Protocol • Free & Open Source under Sovereign Source License (SSL-1.0)</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let currentTab = 'youtube';
+
+        function selectTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.getElementById('form-youtube').style.display = tab === 'youtube' ? 'block' : 'none';
+            document.getElementById('form-website').style.display = tab === 'website' ? 'block' : 'none';
+            document.getElementById('form-github').style.display = tab === 'github' ? 'block' : 'none';
+            document.getElementById('result-box').classList.remove('active');
+        }
+
+        function generateShield(platform) {
+            const resultBox = document.getElementById('result-box');
+            const codeEl = document.getElementById('result-code');
+            const instEl = document.getElementById('result-instructions');
+            const payoutEl = document.getElementById('est-payout');
+
+            const idHash = Math.random().toString(36).substring(2, 8).toUpperCase();
+
+            if (platform === 'youtube') {
+                const handle = document.getElementById('yt-input').value || '@creator';
+                codeEl.textContent = `🛡️ Transcripts protected under Bastion Sovereign Trust (Canary ID: BST-YT-${idHash}). Unauthorized AI scraping prohibited. Licensing: legal@bastion.network`;
+                instEl.textContent = `👉 Paste this single line into your YouTube Channel's "About / Description" section or pinned video comment. Done!`;
+                payoutEl.textContent = "$2,850.00 / yr";
+            } else if (platform === 'website') {
+                const domain = document.getElementById('web-input').value || 'mysite.com';
+                codeEl.textContent = `<script src="https://cdn.bastion.network/shield.js" data-bastion-id="BST-WEB-${idHash}"><\/script>`;
+                instEl.textContent = `👉 Paste this inside your website's <head> tag. Humans view your site normally; bots get fed adversarial poison.`;
+                payoutEl.textContent = "$4,200.00 / yr";
+            } else {
+                codeEl.textContent = `name: Bastion Shield\non: [push]\njobs:\n  protect:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: bastion-protocol/shield-action@v1\n        with:\n          canary_id: 'BST-GH-${idHash}'`;
+                instEl.textContent = `👉 Save this file in your repo as .github/workflows/bastion.yml to block unauthorized AI training on your code.`;
+                payoutEl.textContent = "$3,100.00 / yr";
+            }
+
+            resultBox.classList.add('active');
+        }
+
+        function copyShieldCode() {
+            const text = document.getElementById('result-code').textContent;
+            navigator.clipboard.writeText(text);
+            alert('Shield Code copied to clipboard!');
+        }
+
+        function castVote(tier) {
+            alert(`Your sovereign vote for ${tier} tariff has been recorded on-chain!`);
+        }
+    </script>
+</body>
+</html>
