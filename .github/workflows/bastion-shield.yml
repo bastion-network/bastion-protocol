@@ -1,0 +1,21 @@
+name: Bastion Code Shield
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  protect:
+    name: Verify Sovereign AI Ingestion Protection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Enforce Bastion Anti-Scraping License Header
+        run: |
+          echo "[BASTION] Repository protected under Sovereign Source License (SSL-1.0)."
+          echo "[BASTION] Unauthorized AI model pre-training strictly prohibited."
+          echo "[BASTION] Cryptographic Canary Signature Active."

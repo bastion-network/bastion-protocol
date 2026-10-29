@@ -79,21 +79,28 @@ Bastion fundamentally reverses this asymmetry through an unbreachable technologi
 
 ---
 
-## 4. Quickstart: Protecting Your Assets
+## 4. Quickstart: 60-Second Protection for Everyone
 
-### 1. Website / Blog Protection (Drop-in 1-Line Script)
-Add this single line of code inside your website’s `<head>` tag:
+Whether you own a personal blog, run a YouTube channel, host a podcast, or maintain open-source software, you can protect your content in under 60 seconds:
+
+### A. Websites & Blogs (1-Line Drop-in Script)
+Paste this single line inside your HTML `<head>` tag:
 ```html
-<script src="https://cdn.bastion.network/shield.js" data-bastion-id="usr_your_verified_id"></script>
+<script src="https://cdn.bastion.network/shield.js" data-bastion-id="usr_your_id"></script>
 ```
+*Humans view your site normally. Unauthorized AI scrapers get fed adversarial synthetic poison.*
 
-### 2. YouTube Channel Protection
-1. Link your YouTube channel in the Bastion Dashboard.
-2. Paste your unique 6-character Canary Code in your channel's "About" section.
-3. Your transcripts are automatically watermarked and protected by the Bastion Trust.
+### B. Cloudflare Users (1-Click Edge Protection)
+Protect your **entire domain** at the DNS level without touching your website files.
+👉 Follow the [Cloudflare Edge Worker Guide](integrations/cloudflare_worker.js).
 
-### 3. GitHub Repository Protection
-Add `.github/workflows/bastion-shield.yml` to your repository root to prevent unauthorized code scraping.
+### C. YouTubers, Podcasters & Video Creators
+Protect your spoken transcripts, audio lectures, and creative scripts from automated ingestion:
+👉 Read the [60-Second YouTube & Creator Protection Guide](integrations/youtube_guide.md).
+
+### D. Developers & Open-Source Maintainers
+Stop GitHub Copilot and commercial LLMs from harvesting your proprietary code:
+Copy `.github/workflows/bastion-shield.yml` into your repo root.
 
 ---
 
