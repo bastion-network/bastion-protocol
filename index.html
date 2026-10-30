@@ -385,68 +385,81 @@
         <section class="hero">
             <div class="badge-live">
                 <div class="badge-dot"></div>
-                DEFENSE GRID ACTIVE • $BASTION
+                DEFENSE GRID ACTIVE • BASTION SOVEREIGNTY POINTS (BSP)
             </div>
-            <h1>Stop AI Bots From Stealing Your Work.<br><span>Get Paid What You're Owed.</span></h1>
-            <p>Trillion-dollar AI companies scrape your videos, blogs, and code for free. Bastion poisons unauthorized scrapers with adversarial noise until Big Tech pays creators their fair share.</p>
+            <h1>The Digital Force Field for Every Living Human.<br><span>Stop Free Theft. Earn Your Sovereign Dividends.</span></h1>
+            <p>Whether you make TikToks, shoot YouTube videos, write blogs, or simply share comments, reviews, and life advice on Reddit and X—Big Tech steals your data to train multi-billion dollar AI models. Bastion shields your digital footprint and converts your presence into sovereign points and cash royalties.</p>
             
             <div class="quote-banner">
-                "We cannot turn back the clock on the years they stole from you in the dark. But from the day you step behind our wall, not a single thought, video, or line of code leaves your hands without bringing you its true financial worth."
+                "We cannot turn back the clock on the years they stole from you in the dark. But from the day you step behind our wall, not a single thought, video, comment, or line of code leaves your hands without bringing you its true financial worth."
             </div>
         </section>
 
-        <!-- 3-CLICK WIZARD -->
+        <!-- 3-CLICK UNIVERSAL WIZARD -->
         <div class="wizard-card">
             <div class="wizard-title">
-                <h2>60-Second Protection Generator</h2>
-                <p>Select your platform, enter your link, and generate your instant shield.</p>
+                <h2>1-2-3 Universal Protection Generator</h2>
+                <p>Select who you are, enter your handle or link, and activate your personal digital force field.</p>
             </div>
 
-            <div class="platform-tabs">
-                <button class="tab-btn active" onclick="selectTab('youtube')">🎥 YouTube & Podcasts</button>
+            <div class="platform-tabs" style="grid-template-columns: repeat(4, 1fr);">
+                <button class="tab-btn active" onclick="selectTab('video')">🎥 TikTok & YouTube</button>
+                <button class="tab-btn" onclick="selectTab('social')">💬 Comments & Social (X/Reddit)</button>
                 <button class="tab-btn" onclick="selectTab('website')">🌐 Websites & Blogs</button>
-                <button class="tab-btn" onclick="selectTab('github')">💻 GitHub / Developers</button>
+                <button class="tab-btn" onclick="selectTab('creative')">📄 Code, PDFs & Media</button>
             </div>
 
-            <!-- YouTube Tab Form -->
-            <div id="form-youtube">
+            <!-- Video / Audio Tab Form -->
+            <div id="form-video">
                 <div class="input-group">
-                    <label>Your YouTube Channel Name or Handle:</label>
-                    <input type="text" id="yt-input" class="input-field" placeholder="@MyTechChannel or YouTube URL">
+                    <label>Your YouTube Channel or TikTok Handle:</label>
+                    <input type="text" id="video-input" class="input-field" placeholder="@YourHandle or Profile URL">
                 </div>
-                <button class="btn-activate" onclick="generateShield('youtube')">⚡ ACTIVATE YOUTUBE SHIELD</button>
+                <button class="btn-activate" onclick="generateShield('video')">⚡ ACTIVATE CREATOR FORCE FIELD</button>
+            </div>
+
+            <!-- Social / Everyday Citizen Tab Form -->
+            <div id="form-social" style="display: none;">
+                <div class="input-group">
+                    <label>Your Reddit Username, X Handle, or Primary Social Profile:</label>
+                    <input type="text" id="social-input" class="input-field" placeholder="u/YourUsername or @X_Handle">
+                </div>
+                <button class="btn-activate" onclick="generateShield('social')">⚡ CLAIM CITIZEN DATA SHIELD</button>
             </div>
 
             <!-- Website Tab Form -->
             <div id="form-website" style="display: none;">
                 <div class="input-group">
-                    <label>Your Website Domain or Blog URL:</label>
-                    <input type="text" id="web-input" class="input-field" placeholder="example.com">
+                    <label>Your Website Domain, Substack, or Blog URL:</label>
+                    <input type="text" id="web-input" class="input-field" placeholder="example.com or publication.substack.com">
                 </div>
-                <button class="btn-activate" onclick="generateShield('website')">⚡ ACTIVATE WEBSITE SHIELD</button>
+                <button class="btn-activate" onclick="generateShield('website')">⚡ ACTIVATE DOMAIN FIREWALL</button>
             </div>
 
-            <!-- GitHub Tab Form -->
-            <div id="form-github" style="display: none;">
+            <!-- Creative / Code / PDF Tab Form -->
+            <div id="form-creative" style="display: none;">
                 <div class="input-group">
-                    <label>Your GitHub Username or Repo Name:</label>
-                    <input type="text" id="gh-input" class="input-field" placeholder="username/my-project">
+                    <label>Your GitHub Username, Creative Portfolio, or Asset Title:</label>
+                    <input type="text" id="creative-input" class="input-field" placeholder="github.com/user or Portfolio Name">
                 </div>
-                <button class="btn-activate" onclick="generateShield('github')">⚡ ACTIVATE CODE SHIELD</button>
+                <button class="btn-activate" onclick="generateShield('creative')">⚡ ACTIVATE ASSET PROTECTION</button>
             </div>
 
             <!-- Result Box -->
             <div id="result-box" class="result-box">
                 <div class="result-header">
-                    <h4>✅ Shield Generated & Bound to Sovereign Trust</h4>
-                    <button class="copy-btn" onclick="copyShieldCode()">Copy Code</button>
+                    <h4>✅ Digital Force Field Activated • Bound to Sovereign Trust</h4>
+                    <button class="copy-btn" onclick="copyShieldCode()">Copy Canary Notice</button>
                 </div>
                 <pre id="result-code"></pre>
                 <p id="result-instructions" style="font-size: 14px; color: var(--muted);"></p>
                 
-                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 13px; color: var(--success); font-family: 'JetBrains Mono', monospace;">● Estimated Annual Royalty Share: <b id="est-payout">$2,450.00 / yr</b></span>
-                    <span style="font-size: 12px; color: var(--muted);">Payouts via Stripe / USDC</span>
+                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <span style="font-size: 13px; color: var(--primary); font-family: 'JetBrains Mono', monospace;">● Daily Sovereignty Points: <b id="daily-points">+25 BSP / day</b></span>
+                        <div style="font-size: 12px; color: var(--success); font-family: 'JetBrains Mono', monospace; margin-top: 4px;">● Est. Annual Pool Dividend: <b id="est-payout">$2,450.00 / yr</b></div>
+                    </div>
+                    <span style="font-size: 12px; color: var(--muted); background: #080b12; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);">Points convert to cash/USDC upon Big Tech tariff settlement</span>
                 </div>
             </div>
         </div>
@@ -485,16 +498,17 @@
     </div>
 
     <script>
-        let currentTab = 'youtube';
+        let currentTab = 'video';
 
         function selectTab(tab) {
             currentTab = tab;
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            document.getElementById('form-youtube').style.display = tab === 'youtube' ? 'block' : 'none';
+            document.getElementById('form-video').style.display = tab === 'video' ? 'block' : 'none';
+            document.getElementById('form-social').style.display = tab === 'social' ? 'block' : 'none';
             document.getElementById('form-website').style.display = tab === 'website' ? 'block' : 'none';
-            document.getElementById('form-github').style.display = tab === 'github' ? 'block' : 'none';
+            document.getElementById('form-creative').style.display = tab === 'creative' ? 'block' : 'none';
             document.getElementById('result-box').classList.remove('active');
         }
 
@@ -503,23 +517,33 @@
             const codeEl = document.getElementById('result-code');
             const instEl = document.getElementById('result-instructions');
             const payoutEl = document.getElementById('est-payout');
+            const pointsEl = document.getElementById('daily-points');
 
             const idHash = Math.random().toString(36).substring(2, 8).toUpperCase();
 
-            if (platform === 'youtube') {
-                const handle = document.getElementById('yt-input').value || '@creator';
-                codeEl.textContent = `🛡️ Transcripts protected under Bastion Sovereign Trust (Canary ID: BST-YT-${idHash}). Unauthorized AI scraping prohibited. Licensing: legal@bastion.network`;
-                instEl.textContent = `👉 Paste this single line into your YouTube Channel's "About / Description" section or pinned video comment. Done!`;
-                payoutEl.textContent = "$2,850.00 / yr";
+            if (platform === 'video') {
+                const handle = document.getElementById('video-input').value || '@creator';
+                codeEl.textContent = `🛡️ Spoken transcripts & video IP protected under Bastion Sovereign Trust (Canary ID: BST-VID-${idHash}). Unauthorized AI scraping strictly prohibited. Licensing inquiries: legal@bastion.network`;
+                instEl.textContent = `👉 Paste this 1 sentence into your YouTube channel's "About" section, TikTok bio link, or pinned comment. Instant protection!`;
+                payoutEl.textContent = "$3,200.00 / yr";
+                pointsEl.textContent = "+35 BSP / day";
+            } else if (platform === 'social') {
+                const handle = document.getElementById('social-input').value || 'u/citizen';
+                codeEl.textContent = `🛡️ Sovereign Citizen Data Node (ID: BST-SOC-${idHash}). All public comments, insights, and reviews assigned to Bastion Collective AI Licensing Pool.`;
+                instEl.textContent = `👉 Paste this identifier in your Reddit / X / Facebook bio or pinned post. Your public comments are now registered in the collective class-action dividend pool!`;
+                payoutEl.textContent = "$850.00 / yr";
+                pointsEl.textContent = "+15 BSP / day";
             } else if (platform === 'website') {
                 const domain = document.getElementById('web-input').value || 'mysite.com';
                 codeEl.textContent = `<script src="https://cdn.bastion.network/shield.js" data-bastion-id="BST-WEB-${idHash}"><\/script>`;
-                instEl.textContent = `👉 Paste this inside your website's <head> tag. Humans view your site normally; bots get fed adversarial poison.`;
-                payoutEl.textContent = "$4,200.00 / yr";
+                instEl.textContent = `👉 Paste this inside your website's <head> tag. Humans view your site normally; bots get fed adversarial synthetic poison.`;
+                payoutEl.textContent = "$4,800.00 / yr";
+                pointsEl.textContent = "+50 BSP / day";
             } else {
-                codeEl.textContent = `name: Bastion Shield\non: [push]\njobs:\n  protect:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: bastion-protocol/shield-action@v1\n        with:\n          canary_id: 'BST-GH-${idHash}'`;
-                instEl.textContent = `👉 Save this file in your repo as .github/workflows/bastion.yml to block unauthorized AI training on your code.`;
-                payoutEl.textContent = "$3,100.00 / yr";
+                codeEl.textContent = `[BASTION SOVEREIGN ASSET: BST-CRT-${idHash}]\nProtected under Sovereign Source License (SSL-1.0). Commercial AI model pre-training strictly prohibited without an authorized Master Ingestion Key.`;
+                instEl.textContent = `👉 Include this header in your GitHub README, PDF cover page, or digital portfolio. Commercial AI bots are legally barred from training on your work.`;
+                payoutEl.textContent = "$3,900.00 / yr";
+                pointsEl.textContent = "+40 BSP / day";
             }
 
             resultBox.classList.add('active');
@@ -528,11 +552,11 @@
         function copyShieldCode() {
             const text = document.getElementById('result-code').textContent;
             navigator.clipboard.writeText(text);
-            alert('Shield Code copied to clipboard!');
+            alert('Bastion Canary Notice copied to clipboard!');
         }
 
         function castVote(tier) {
-            alert(`Your sovereign vote for ${tier} tariff has been recorded on-chain!`);
+            alert(`Your sovereign referendum vote for ${tier} tariff has been recorded!`);
         }
     </script>
 </body>
